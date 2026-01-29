@@ -1,0 +1,112 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input AuthInput {
+  nome: String!
+  senha: String!
+}
+
+type AuthOutput {
+  token: String!
+}
+
+input ConsorcioInput {
+  dataAtualizacao: String
+  dataCriacao: String!
+  descricao: String
+  nome: String!
+}
+
+type ConsorcioOutput {
+  cotas: [CotaOutput]
+  dataAtualizacao: String
+  dataCriacao: String!
+  descricao: String
+  id: Int!
+  nome: String!
+}
+
+input CotaInput {
+  consorcioId: Int!
+  dataAtualizacao: String
+  dataCriacao: String
+  numeroCota: String!
+  status: String!
+  usuarioId: Int!
+  valor: Float!
+}
+
+type CotaOutput {
+  consorcioId: Int!
+  dataAtualizacao: String
+  dataCriacao: String!
+  id: Int!
+  numeroCota: String!
+  status: String
+  usuarioId: Int!
+  valor: Float!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createConsorcio(consorcioInput: ConsorcioInput!): ConsorcioOutput!
+  createCota(cotaInput: CotaInput!): CotaOutput!
+  createUsuario(usuarioInput: UsuarioInput!): UsuarioOutput!
+  deleteConsorcio(id: Int!): Boolean!
+  deleteCota(id: Int!): Boolean!
+  deleteUsuario(id: Int!): Boolean!
+  login(authInput: AuthInput!): AuthOutput!
+  updateConsorcio(consorcioInput: UpdateConsorcioInput!, id: Int!): ConsorcioOutput!
+  updateCota(cotaInput: UpdateCotaInput!, id: Int!): CotaOutput!
+  updateUsuario(id: Int!, usuarioInput: UsuarioInput!): UsuarioOutput!
+}
+
+type Query {
+  consorcio(id: Int!): ConsorcioOutput!
+  consorcios: [ConsorcioOutput!]!
+  cota(id: Int!): CotaOutput!
+  cotas: [CotaOutput!]!
+  cotasByConsorcioId(consorcioId: Int!): [CotaOutput!]!
+  cotasByStatus(status: String!): [CotaOutput!]!
+  usuario(id: Int!): UsuarioOutput!
+  usuarios: [UsuarioOutput!]!
+}
+
+input UpdateConsorcioInput {
+  dataAtualizacao: String
+  dataCriacao: String
+  descricao: String
+  nome: String
+}
+
+input UpdateCotaInput {
+  consorcioId: Int
+  dataAtualizacao: DateTime
+  dataCriacao: DateTime
+  numeroCota: String
+  status: String
+  usuarioId: Int
+  valor: Float
+}
+
+input UsuarioInput {
+  dataAtualizacao: String
+  dataCriacao: String!
+  email: String!
+  nome: String!
+  senha: String!
+}
+
+type UsuarioOutput {
+  cotas: [CotaOutput]
+  dataAtualizacao: String
+  dataCriacao: String
+  email: String
+  id: Int
+  nome: String
+}

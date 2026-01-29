@@ -1,0 +1,111 @@
+/* Estilos para o contêiner principal */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    /* Um azul bem claro, quase branco */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos para o cartão de login */
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card h2 {
+    color: #007bff;
+    /* Azul primário */
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Estilos para os grupos de formulário (label + input) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Garante que o padding não aumente a largura total */
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos para o botão de submit */
+.login-button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #007bff;
+    /* Azul primário */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    /* Um azul um pouco mais escuro */
+}
+
+.login-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Estilos para mensagens de carregamento e erro */
+.login-card p.loading {
+    color: #007bff;
+    margin-top: 15px;
+}
+
+.login-card p.error {
+    color: #dc3545;
+    /* Vermelho para erros */
+    margin-top: 15px;
+}
+
+/* Link para registro, se houver */
+.register-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
